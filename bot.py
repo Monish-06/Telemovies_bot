@@ -3,6 +3,19 @@
 # Ask Doubt on telegram @KingVJ01
 
 # Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+import threading
+import requests
+import time
+ 
+def keep_alive():
+    while True:
+        try:
+            requests.get("https://scornful-andreana-moxi35-c66f799a.koyeb.app/")
+        except:
+            pass
+        time.sleep(90)  # Ping every 5 minutes
+ 
+threading.Thread(target=keep_alive, daemon=True).start()
 
 import sys, glob, importlib, logging, logging.config, pytz, asyncio
 from pathlib import Path
